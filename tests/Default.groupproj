@@ -1,0 +1,48 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{495923B9-707D-49F7-963C-6D83BF1DF8B7}</ProjectGuid>
+    </PropertyGroup>
+    <ItemGroup>
+        <Projects Include="JWT_Tests.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="JWT_ipworks_Tests.dproj">
+            <Dependencies/>
+        </Projects>
+    </ItemGroup>
+    <ProjectExtensions>
+        <Borland.Personality>Default.Personality.12</Borland.Personality>
+        <Borland.ProjectType/>
+        <BorlandProject>
+            <Default.Personality/>
+        </BorlandProject>
+    </ProjectExtensions>
+    <Target Name="JWT_Tests">
+        <MSBuild Projects="JWT_Tests.dproj"/>
+    </Target>
+    <Target Name="JWT_Tests:Clean">
+        <MSBuild Projects="JWT_Tests.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="JWT_Tests:Make">
+        <MSBuild Projects="JWT_Tests.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="JWT_ipworks_Tests">
+        <MSBuild Projects="JWT_ipworks_Tests.dproj"/>
+    </Target>
+    <Target Name="JWT_ipworks_Tests:Clean">
+        <MSBuild Projects="JWT_ipworks_Tests.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="JWT_ipworks_Tests:Make">
+        <MSBuild Projects="JWT_ipworks_Tests.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Build">
+        <CallTarget Targets="JWT_Tests;JWT_ipworks_Tests"/>
+    </Target>
+    <Target Name="Clean">
+        <CallTarget Targets="JWT_Tests:Clean;JWT_ipworks_Tests:Clean"/>
+    </Target>
+    <Target Name="Make">
+        <CallTarget Targets="JWT_Tests:Make;JWT_ipworks_Tests:Make"/>
+    </Target>
+    <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
+</Project>

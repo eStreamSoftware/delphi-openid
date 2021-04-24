@@ -215,7 +215,9 @@
         <DCCReference Include="..\source\System.NetEncoding.Base64Url.pas"/>
         <DCCReference Include="..\source\ASN1.pas"/>
         <DCCReference Include="..\source\ASN1.X509.pas"/>
+        <DCCReference Include="..\source\JWKS.pas"/>
         <DCCReference Include="ASN1.TestCase.pas"/>
+        <DCCReference Include="JWKS.TestCase.pas"/>
         <BuildConfiguration Include="Debug">
             <Key>Cfg_2</Key>
             <CfgParent>Base</CfgParent>
